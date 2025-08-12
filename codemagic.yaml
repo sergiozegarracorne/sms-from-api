@@ -2,8 +2,10 @@ workflows:
   android:
     name: Build APK
     environment:
+      vars:
+        ANDROID_SDK_ROOT: /opt/android-sdk
       java: 17
     scripts:
-      - gradle assembleDebug
+      - ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/**/*.apk
